@@ -1,0 +1,158 @@
+@define-color ct_bg #212121;
+@define-color ct_side #171717;
+@define-color ct_text #ececec;
+@define-color ct_muted #9b9b9b;
+@define-color ct_faint #6f6f6f;
+@define-color ct_hover #262626;
+@define-color ct_sel #2f2f2f;
+@define-color ct_field #2f2f2f;
+@define-color ct_line #383838;
+@define-color ct_accent #d97757;
+@define-color ct_green #6fcf97;
+
+window.ct, window.ct .main, window.ct stack { background-color: @ct_bg; color: @ct_text; }
+window.ct { font-family: "Ubuntu Sans", "Noto Sans", sans-serif; }
+window.ct label { color: @ct_text; }
+window.ct .muted, window.ct .muted label { color: @ct_muted; }
+window.ct .faint { color: @ct_faint; }
+window.ct separator { background-color: @ct_line; min-height: 1px; min-width: 1px; }
+
+/* ---------- title bar ------------------------------------------------ */
+window.ct headerbar {
+  background: @ct_bg; border: none; box-shadow: none;
+  min-height: 46px; padding: 0 8px;
+}
+window.ct headerbar.sidebar-open {
+  background-image: linear-gradient(to right, @ct_side 272px, @ct_bg 272px);
+}
+window.ct headerbar .title { font-weight: 600; font-size: 15px; }
+window.ct headerbar .subtitle { font-size: 12px; color: @ct_muted; }
+window.ct button.flat, window.ct headerbar button {
+  background: transparent; border: none; box-shadow: none; color: @ct_muted;
+  border-radius: 10px; min-height: 30px; min-width: 30px; padding: 2px 8px;
+  text-shadow: none; -gtk-icon-shadow: none;
+}
+window.ct button.flat:hover, window.ct headerbar button:hover { background: @ct_hover; color: @ct_text; }
+window.ct headerbar button.titlebutton { color: @ct_muted; min-width: 26px; padding: 2px; }
+
+window.ct .viewswitch {
+  background: @ct_side; border-radius: 12px; padding: 3px;
+}
+window.ct .viewswitch button {
+  border-radius: 9px; padding: 2px 14px; min-height: 26px; color: @ct_muted;
+}
+window.ct .viewswitch button:checked { background: @ct_sel; color: @ct_text; }
+
+/* ---------- sidebar -------------------------------------------------- */
+window.ct .sidebar { background-color: @ct_side; }
+window.ct .sidebar list, window.ct .sidebar scrolledwindow, window.ct .sidebar viewport { background: transparent; }
+window.ct .newchat {
+  background: transparent; border: none; box-shadow: none; border-radius: 10px;
+  padding: 8px 10px; color: @ct_text;
+}
+window.ct .newchat:hover { background: @ct_hover; }
+window.ct .newchat .hint { color: @ct_faint; font-size: 11px; }
+window.ct .sidebar entry.search {
+  background: @ct_bg; color: @ct_text; border: 1px solid @ct_line; border-radius: 10px;
+  min-height: 32px; box-shadow: none; caret-color: @ct_text;
+}
+window.ct .sidebar entry.search image { color: @ct_muted; }
+window.ct .sidebar combobox button, window.ct .pill combobox button, window.ct combobox.pill button {
+  background: transparent; border: 1px solid @ct_line; border-radius: 10px; box-shadow: none;
+  color: @ct_muted; padding: 2px 8px; min-height: 26px;
+}
+window.ct .sidebar combobox button:hover, window.ct combobox.pill button:hover { background: @ct_hover; color: @ct_text; }
+window.ct .sidebar combobox cellview, window.ct combobox.pill cellview { color: @ct_muted; }
+
+window.ct .convlist row {
+  border-radius: 10px; padding: 7px 10px; margin: 0 8px; background: transparent;
+  outline: none; box-shadow: none;
+}
+window.ct .convlist row:hover { background: @ct_hover; }
+window.ct .convlist row:selected { background: @ct_sel; }
+window.ct .convlist row:selected label { color: @ct_text; }
+window.ct .convlist .conv-title { font-size: 14px; }
+window.ct .convlist row label.conv-sub { font-size: 11.5px; color: @ct_faint; }
+window.ct .group-header {
+  font-size: 12px; font-weight: 600; color: @ct_muted; padding: 16px 18px 6px;
+}
+window.ct .convlist row label.dot { font-size: 10px; }
+window.ct .convlist row label.dot.idle { color: @ct_green; }
+window.ct .convlist row label.dot.busy { color: @ct_accent; }
+window.ct .convlist row label.dot.elsewhere { color: @ct_faint; }
+window.ct .pin { color: @ct_faint; }
+window.ct .sidebar-foot button { color: @ct_muted; }
+window.ct .loading { color: @ct_faint; padding: 20px; }
+window.ct scrolledwindow undershoot.top, window.ct scrolledwindow undershoot.bottom { background: none; }
+window.ct .sidebar scrollbar { background: transparent; border: none; }
+window.ct .sidebar scrollbar slider { min-width: 4px; background-color: #3a3a3a; border: none; }
+
+/* ---------- composer ------------------------------------------------- */
+window.ct .composer {
+  background: @ct_field; border-radius: 26px; padding: 12px 12px 10px 18px;
+  border: 1px solid #3a3a3a;
+}
+window.ct .composer textview, window.ct .composer textview text {
+  background: transparent; color: @ct_text; font-size: 15.5px; caret-color: @ct_text;
+}
+window.ct .composer .placeholder { color: @ct_faint; font-size: 15.5px; }
+window.ct .composer button.send {
+  background: @ct_text; color: @ct_bg; border-radius: 999px; border: none;
+  min-width: 34px; min-height: 34px; padding: 0; box-shadow: none;
+}
+window.ct .composer button.send:disabled { background: #4a4a4a; color: #2a2a2a; }
+window.ct .composer button.chip, window.ct .composer menubutton.chip button, window.ct .composer button.chip-menu {
+  background: transparent; border: 1px solid @ct_line; border-radius: 999px; color: @ct_muted;
+  padding: 2px 10px; min-height: 28px; box-shadow: none;
+}
+window.ct .composer button.chip:hover, window.ct .composer button.chip-menu:hover { background: @ct_hover; color: @ct_text; }
+window.ct .composer combobox.pill button { border-radius: 999px; }
+window.ct .caption { color: @ct_faint; font-size: 11.5px; }
+
+/* ---------- home ----------------------------------------------------- */
+window.ct .greeting { font-size: 34px; font-weight: 600; }
+window.ct .greeting-sub { font-size: 34px; font-weight: 600; color: #5d5d5d; }
+window.ct button.card {
+  background: transparent; border: 1px solid @ct_line; border-radius: 16px;
+  padding: 12px 14px; box-shadow: none;
+}
+window.ct button.card:hover { background: @ct_hover; }
+window.ct .card .card-title { font-weight: 600; font-size: 13.5px; }
+window.ct .card .card-sub { color: @ct_muted; font-size: 12.5px; }
+
+/* ---------- terminal ------------------------------------------------- */
+window.ct .ended {
+  background: @ct_field; border-radius: 16px; padding: 10px 12px 10px 18px;
+  border: 1px solid @ct_line; margin: 16px;
+}
+window.ct .ended button, window.ct .banner button, window.ct button.accent {
+  background: @ct_text; color: @ct_bg; border: none; border-radius: 999px;
+  padding: 4px 14px; box-shadow: none; font-weight: 600;
+}
+window.ct .ended button.secondary, window.ct .banner button.secondary {
+  background: transparent; color: @ct_text; border: 1px solid @ct_line;
+}
+window.ct .ended button label, window.ct .banner button label, window.ct button.accent label { color: inherit; }
+window.ct .banner {
+  background: #2b2520; border: 1px solid #4a3a30; border-radius: 14px;
+  padding: 8px 10px 8px 16px; margin: 0 0 10px 0;
+}
+
+/* ---------- popovers, menus and dialogs ------------------------------ */
+window.ct popover, menu.ct-menu, .ct-dialog {
+  background-color: #2a2a2a; color: @ct_text; border: 1px solid @ct_line;
+}
+window.ct popover { border-radius: 14px; padding: 6px; }
+window.ct popover modelbutton, window.ct popover button.flat {
+  border-radius: 8px; padding: 6px 10px; color: @ct_text;
+}
+window.ct popover modelbutton:hover, window.ct popover button.flat:hover { background: #363636; }
+menu.ct-menu { padding: 4px; border-radius: 10px; }
+menu.ct-menu menuitem { padding: 6px 12px; color: @ct_text; border-radius: 6px; }
+menu.ct-menu menuitem:hover { background: #363636; }
+menu.ct-menu separator { background-color: @ct_line; margin: 3px 0; }
+.ct-dialog label, .ct-dialog entry { color: @ct_text; }
+.ct-dialog entry { background: @ct_bg; border: 1px solid @ct_line; border-radius: 8px; }
+
+@keyframes ct-pulse { from { opacity: 1; } to { opacity: 0.3; } }
+window.ct .convlist row label.dot.busy { animation: ct-pulse 0.9s ease-in-out infinite alternate; }
